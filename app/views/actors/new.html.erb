@@ -1,0 +1,9 @@
+<h2>Create some acting competition here!</h2>
+
+<%= form_for @actor do |f| %>
+  Name: <%= f.text_field :name %><br><br>
+  Age: <%= f.number_field :age %><br><br>
+  Sex: <%= f.select(:sex, @sex_array) %><br><br>
+  <%= f.submit %>
+
+<% end %>
