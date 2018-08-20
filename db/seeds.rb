@@ -20,3 +20,7 @@ end
 50.times do
   Booking.create!(salary: rand(100..5000), duration_days: rand(1..365), show_name: Faker::Book.title, role_name: Faker::Name.first_name, available?: [true, false].sample, production_company_id: rand(1..20))
 end
+
+20.times do
+  Audition.create!(address: Faker::Address.street_address, time: Faker::Date.forward(30), actor_id: rand(1..20), production_company_id: rand(1..20), booking_id: rand(1..50))
+end
