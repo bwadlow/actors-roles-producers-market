@@ -9,17 +9,24 @@ class ProductionCompaniesController < ApplicationController
   end
 
   def new
-
+    @production_company = ProductionCompany.new
+    render :new
   end
 
   def create
+    @production_company = ProductionCompany.create(prod_params)
+      if @production_company
+        redirect_to @production_company
+      else
+        render :new
+      end
   end
 
 
   private
 
   def prod_params
-    params.require(:production_companies).permit(:name)
+    params.require(:production_company).permit(:name)
   end
 
 
