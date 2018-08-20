@@ -1,0 +1,13 @@
+<h1><%= @production_company.name %>'s Bookings</h1>
+  <ul>
+    <% @production_company.bookings.each do |booking| %>
+    <li>
+    <p>Show: <%=booking.show_name %></p>
+    <ul>
+    <label>Role: <%=booking.role_name %></label><br>
+    <label>Salary: <%=booking.salary %></label><br>
+    <label>Duration in Days: <%=booking.duration_days %></label>
+  </ul>
+    </li>
+    <% end %>
+  </ul>
