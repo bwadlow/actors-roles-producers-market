@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_20_185254) do
+ActiveRecord::Schema.define(version: 2018_08_20_200754) do
 
   create_table "actors", force: :cascade do |t|
     t.string "name"
@@ -40,7 +40,9 @@ ActiveRecord::Schema.define(version: 2018_08_20_185254) do
     t.integer "actor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "production_company_id"
     t.index ["actor_id"], name: "index_bookings_on_actor_id"
+    t.index ["production_company_id"], name: "index_bookings_on_production_company_id"
   end
 
   create_table "production_companies", force: :cascade do |t|
