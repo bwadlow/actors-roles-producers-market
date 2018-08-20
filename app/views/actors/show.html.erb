@@ -4,4 +4,6 @@ Actor stats:<br><br>
 Age: <%= @actor.age %><br>
 Sex: <%= @actor.sex %><br><br>
 
+<%= button_to "Delete this actor", actor_path(@actor), method: :delete %><br><br>
+
 <%= link_to "Back to all actors", actors_path %>
