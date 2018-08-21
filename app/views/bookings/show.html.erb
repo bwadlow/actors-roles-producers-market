@@ -2,9 +2,9 @@
 
 <label><b>Role: </b></label> <%= @booking.role_name %><br>
 <label><b>Salary: </b></label> <%= @booking.salary %><br>
+<label><b>Sex: </b></label> <%= @booking.sex %><br>
 <label><b>Duration in Days: </b></label> <%= @booking.duration_days %><br>
 <label><b>Currently Available?: </b></label> <%= @booking.available? %><br>
-<label><b>Production Company: </b></label> <%= @booking.production_company.name %><br><br>
+<label><b>Production Company: </b></label> <%= link_to @booking.production_company.name, production_company_path(@booking.production_company) %><br><br>
 
 <%= link_to "Update this booking", edit_booking_path %><br><br>
-<%= link_to "Create a New Booking for #{@booking.show_name}", new_booking_path(show_name: "#{@booking.show_name}") %>
