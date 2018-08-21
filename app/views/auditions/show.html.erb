@@ -3,7 +3,8 @@
 Production Company: <%= link_to @audition.production_company.name, production_company_path(@audition.production_company) %><br><br>
 Show: <%= @audition.booking.show_name %><br><br>
 Role: <%= @audition.booking.role_name %><br><br>
-Time: <%= @audition.time %><br><br>
+Date: <%= @audition.date %><br><br>
+Time: <%= @audition.time.strftime("%I:%M:%S %p") %><br><br>
 Location: <%= @audition.address %><br><br>
 
 <%= link_to "Need to change the date?", edit_audition_path(@audition) %><br><br>
