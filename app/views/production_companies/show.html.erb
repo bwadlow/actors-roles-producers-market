@@ -1,6 +1,7 @@
 <h1><%= @production_company.name %>'s Bookings</h1>
+<%= button_to "Delete this company", @production_company, method: :delete %><br><br>
 
-<%= link_to "Create a new booking", new_booking_path %>
+<%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}") %>
   <ul>
     <% @production_company.bookings.each do |booking| %>
     <li>
@@ -14,7 +15,7 @@
     <% end %>
   </ul>
 
-  <%= button_to "Delete this company", @production_company, method: :delete %><br><br>
+
 
 
   <%= link_to "Back to all companies", production_companies_path %>

@@ -1,9 +1,15 @@
-<h1>New Booking for <%= @name %></h1>
+<% if @show_name == nil %><h1>New Booking for <%= @prod_name %></h1>
+<% else %>
+<h1>New Booking for <%= @show_name %></h1>
+<% end %>
 
 <%= form_for @booking do |f| %>
+<% if @show_name ==nil %>
   <%= f.label :show_name %>
-  <%= f.text_field :show_name, :value => @name %>
-
+  <%= f.text_field :show_name %>
+  <% else %>
+  <%= f.hidden_field :show_name, :value => @show_name %>
+  <% end %>
   <%= f.label :role_name %>
   <%= f.text_field :role_name %>
 
