@@ -1,5 +1,11 @@
 <h1>All Bookings</h1>
 
+<h4>Search by sex</h4>
+  <%= form_tag(bookings_path, method: :get) do %>
+    <%= text_field_tag(:search, params[:search]) %>
+    <%= submit_tag ("Search") %>
+  <% end %>
+
   <ul>
     <% @bookings.each do |booking| %>
       <li>
