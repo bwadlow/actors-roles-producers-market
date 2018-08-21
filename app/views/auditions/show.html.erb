@@ -1,0 +1,9 @@
+<h2><%= @audition.actor.name %>'s Audition</h2>
+
+Production Company: <%= @audition.production_company.name %><br><br>
+Show: <%= @audition.booking.show_name %><br><br>
+Role: <%= @audition.booking.role_name %><br><br>
+Time: <%= @audition.time %><br><br>
+Location: <%= @audition.address %><br><br>
+
+<%= button_to "Cancel this audition", @audition, method: :delete %>

@@ -1,0 +1,12 @@
+<h1>AUDITIONS</h1>
+
+<ul>
+  <% @auditions.each do |audition| %>
+  Our auditionee: <%= audition.actor.name %><br>
+  Our auditioner: <%= audition.production_company.name %><br>
+  Location: <%= audition.address %><br>
+  Date & Time: <%= audition.time %><br>
+  Show: <%= audition.booking.show_name %><br>
+  Role: <%= audition.booking.role_name %><br><br>
+  <% end %>
+</ul>
