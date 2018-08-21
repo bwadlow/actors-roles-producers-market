@@ -1,6 +1,6 @@
-<h2><%= @audition.actor.name %>'s Audition</h2>
+<h2><%= link_to @audition.actor.name, actor_path(@audition.actor) %>'s Audition</h2>
 
-Production Company: <%= @audition.production_company.name %><br><br>
+Production Company: <%= link_to @audition.production_company.name, production_company_path(@audition.production_company) %><br><br>
 Show: <%= @audition.booking.show_name %><br><br>
 Role: <%= @audition.booking.role_name %><br><br>
 Time: <%= @audition.time %><br><br>
