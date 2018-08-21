@@ -6,4 +6,6 @@ Role: <%= @audition.booking.role_name %><br><br>
 Time: <%= @audition.time %><br><br>
 Location: <%= @audition.address %><br><br>
 
+<%= link_to "Need to change the date?", edit_audition_path(@audition) %><br><br>
+
 <%= button_to "Cancel this audition", @audition, method: :delete %>
