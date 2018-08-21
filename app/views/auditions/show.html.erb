@@ -7,6 +7,6 @@ Date: <%= @audition.date %><br><br>
 Time: <%= @audition.time.strftime("%I:%M:%S %p") %><br><br>
 Location: <%= @audition.address %><br><br>
 
-<%= link_to "Need to change the date?", edit_audition_path(@audition) %><br><br>
+<%= link_to "Need to change the date and/or time?", edit_audition_path(@audition) %><br><br>
 
 <%= button_to "Cancel this audition", @audition, method: :delete %>
