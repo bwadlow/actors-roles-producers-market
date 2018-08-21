@@ -1,7 +1,7 @@
 <h1><%= @production_company.name %>'s Bookings</h1>
 <%= button_to "Delete this company", @production_company, method: :delete %><br><br>
 
-<%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}") %>
+<%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}", prod_id: "#{@production_company.id}") %>
   <ul>
     <% @production_company.bookings.each do |booking| %>
     <li>
@@ -9,9 +9,12 @@
     <ul>
     <label>Role: <%=booking.role_name %></label><br>
     <label>Salary: <%=booking.salary %></label><br>
-    <label>Duration in Days: <%=booking.duration_days %></label>
+    <label>Sex: <%=booking.sex %></label><br>
+    <label>Actor: <%=booking.actor %></label><br>
+    <label>Duration in Days: <%=booking.duration_days %></label><br><br>
   </ul>
     </li>
+    <%= link_to "Create a New Booking for #{booking.show_name}", new_booking_path(show_name: "#{booking.show_name}", prod_id: "#{booking.production_company_id}") %>
     <% end %>
   </ul>
 
