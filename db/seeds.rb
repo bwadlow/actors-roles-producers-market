@@ -22,5 +22,5 @@ end
 end
 
 20.times do
-  Audition.create!(address: Faker::Address.street_address, time: Faker::Date.forward(30), actor_id: rand(1..20), production_company_id: rand(1..20), booking_id: rand(1..50))
+  Audition.create!(address: Faker::Address.street_address, time: Faker::Time.forward(45, :day), date: Faker::Date.forward(60), actor_id: rand(1..20), production_company_id: rand(1..20), booking_id: rand(1..50))
 end

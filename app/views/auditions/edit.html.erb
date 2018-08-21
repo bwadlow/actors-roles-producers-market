@@ -1,0 +1,8 @@
+<h2>Change your audition date</h2>
+
+<%= form_for @audition do |f| %>
+  <%= f.date_select(:time,:start_year => 2018) %><br><br>
+  <%= f.time_select(:time,:start_year => 2018) %><br><br>
+  <%= f.submit %>
+
+<% end %>
