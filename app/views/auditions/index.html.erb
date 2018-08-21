@@ -2,6 +2,7 @@
 
 <ul>
   <% @auditions.each do |audition| %>
+  <%= link_to "Audition No. #{audition.id}", audition_path(audition) %><br>
   Our auditionee: <%= audition.actor.name %><br>
   Our auditioner: <%= audition.production_company.name %><br>
   Location: <%= audition.address %><br>
