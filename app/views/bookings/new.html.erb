@@ -1,0 +1,21 @@
+<h1>New Booking</h1>
+
+<%= form_for @booking do |f| %>
+  <%= f.label :show_name %>
+  <%= f.text_field :show_name %>
+
+  <%= f.label :role_name %>
+  <%= f.text_field :role_name %>
+
+  <%= f.label :salary %>
+  <%= f.text_field :salary %>
+
+  <%= f.label :Duration_in_days %>
+  <%= f.text_field :duration_days %>
+
+  <%= f.label :available? %>
+  <%= f.check_box :available? %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -22,6 +22,15 @@ class ProductionCompaniesController < ApplicationController
       end
   end
 
+  def destroy
+    @production_company = ProductionCompany.find(params[:id])
+    if @production_company.destroy
+      redirect_to production_companies_path
+    else
+      redirect_to production_company_path(@production_company)
+    end
+  end
+
 
   private
 
