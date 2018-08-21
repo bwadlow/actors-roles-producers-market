@@ -10,7 +10,6 @@ class ProductionCompaniesController < ApplicationController
 
   def new
     @production_company = ProductionCompany.new
-    render :new
   end
 
   def create

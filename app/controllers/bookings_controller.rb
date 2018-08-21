@@ -9,7 +9,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-    @name = params[:show_name]
+    @show_name = params[:show_name]
+    @prod_name = params[:name]
   end
 
   def create
