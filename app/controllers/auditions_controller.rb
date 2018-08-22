@@ -29,7 +29,7 @@ class AuditionsController < ApplicationController
   private
 
   def audition_params
-    params.require(:audition).permit(:address, :time, :actor_id, :production_company_id, :booking_id)
+    params.require(:audition).permit(:address, :time, :date, :actor_id, :production_company_id, :booking_id)
   end
 
 end
