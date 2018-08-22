@@ -3,11 +3,24 @@ class Booking < ApplicationRecord
   belongs_to :actor, optional: true
   belongs_to :production_company
 
-  def self.search(search)
-    if search
-      booking = Booking.find_by(sex: search.downcase)
+  def self.sex_search(sex_search)
+    if sex_search
+      booking = Booking.find_by(sex: sex_search.downcase)
       if booking
-        self.where(sex: search.downcase)
+        self.where(sex: sex_search.downcase)
+      else
+        Booking.all
+      end
+    else
+      Booking.all
+    end
+  end
+
+  def self.age_search(age_search)
+    if age_search
+      booking = Booking.find_by(age: age_search)
+      if booking
+        self.where(age: age_search)
       else
         Booking.all
       end

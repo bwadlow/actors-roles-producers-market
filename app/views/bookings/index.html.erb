@@ -1,9 +1,14 @@
 <h1>All Bookings</h1>
 
-<h4>Search by sex</h4>
+<h4>Search by sex
   <%= form_tag(bookings_path, method: :get) do %>
-    <%= text_field_tag(:search, params[:search]) %>
-  <% end %><br><br>
+    <%= text_field_tag(:sex_search, params[:sex_search]) %>
+  <% end %></h4>
+<h4>Search by age
+<%= form_tag(bookings_path, method: :get) do %>
+  <%= number_field_tag(:age_search, params[:age_search]) %>
+<% end %><br></h4><br>
+
 
   <ul>
     <% @bookings.each do |booking| %>

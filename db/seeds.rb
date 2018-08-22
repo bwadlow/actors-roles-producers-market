@@ -19,7 +19,7 @@ end
 end
 
 50.times do
-  Booking.create!(salary: rand(100..5000), duration_days: rand(1..365), show_name: Faker::Book.title, role_name: Faker::Name.first_name, available?: true, production_company_id: rand(1..20), sex: bookings_sex_array.sample(1).first)
+  Booking.create!(salary: rand(100..5000), duration_days: rand(1..365), show_name: Faker::Book.title, role_name: Faker::Name.first_name, available?: true, production_company_id: rand(1..20), sex: bookings_sex_array.sample(1).first, age: rand(18..99))
 end
 
 20.times do
