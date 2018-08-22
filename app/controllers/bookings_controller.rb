@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.search(params[:search])
   end
 
   def show
@@ -49,7 +49,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available?, :actor_id, :production_company_id, :booking_id, :sex)
+    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available?, :actor_id, :production_company_id, :booking_id, :sex, :sex_search)
   end
 
 end#end of class

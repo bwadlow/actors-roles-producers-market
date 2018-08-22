@@ -4,7 +4,7 @@
   <%= form_tag(bookings_path, method: :get) do %>
     <%= text_field_tag(:search, params[:search]) %>
     <%= submit_tag ("Search") %>
-  <% end %>
+  <% end %><br><br>
 
   <ul>
     <% @bookings.each do |booking| %>
