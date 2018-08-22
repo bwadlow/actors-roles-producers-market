@@ -8,8 +8,8 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @sex_array = ['male', 'female', 'other']
     @booking = Booking.new
+    @sex_array = ['male', 'female', 'other']
     @show_name = params[:show_name]
     @prod_name = params[:name]
     @prod_id = params[:prod_id]
@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @sex_array = ['male', 'female', 'other']
+    @sex_array = ['other', 'male', 'female']
     @booking = Booking.create!(booking_params)
     if @booking.save
       redirect_to production_company_path(@booking.production_company)
@@ -27,13 +27,19 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    @sex_array = ['male', 'female', 'other']
     @booking = Booking.find(params[:id])
+    @auditions = Audition.all.select do |audition|
+        audition.actor_id == @booking.actor_id
+      end
     render :edit
   end
 
   def update
-    if @booking.update(booking_params)
-      redirect_to @booking
+    # byebug
+    @booking = Booking.update(booking_params)
+    if @booking
+      redirect_to booking_path(@booking)
     else
       render :edit
     end
@@ -41,6 +47,9 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    @booking.destroy
+    flash[:notice] = 'Successfully deleted booking'
+    redirect_to production_company_path(@booking.production_company)
   end
 
 
@@ -49,7 +58,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available?, :actor_id, :production_company_id, :booking_id, :sex)
+    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available?, :actor_id, :production_company_id, :sex)
   end
 
 end#end of class

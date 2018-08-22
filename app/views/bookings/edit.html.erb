@@ -1,17 +1,29 @@
-<h1>Edit Booking Page</h1>
+<h1>Edit Booking Page for <%= @booking.show_name %></h1>
 
 <%= form_for @booking do |f| %>
-  <%= f.label :show_name %>
-  <%= f.text_field :show_name%>
 
-  <%= f.label :role_name %>
+  <%= f.hidden_field :show_name%>
+
+  <b><%= f.label :Role %></b>
   <%= f.text_field :role_name %>
 
-  <%= f.label :salary %>
+  <b><%= f.label :Sex %></b>
+  <%= f.select(:sex, @sex_array) %>
+
+  <b><%= f.label :Actor %></b>
+  <% if @auditions.length==0 %>
+  <%= "There are no auditions" %>
+  <% else %>
+  <%= f.collection_select(:actor_id, @auditions, :id, :name) %>
+  <% end %>
+  <b><%= f.label :salary %></b>
   <%= f.text_field :salary %>
 
-  <%= f.label :Duration_in_days %>
+  <b><%= f.label :Duration_in_days %></b>
   <%= f.text_field :duration_days %>
+
+  <b><%= f.label :Available %></b>
+  <%= f.check_box :available? %>
 
   <%= f.submit %>
 
