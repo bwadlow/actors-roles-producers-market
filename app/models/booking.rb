@@ -40,4 +40,7 @@ class Booking < ApplicationRecord
     end
   end
 
+  def hire_actor
+  end
+
 end
