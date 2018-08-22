@@ -41,6 +41,8 @@ class Booking < ApplicationRecord
   end
 
   def hire_actor
+    if available? == true
+    end
   end
 
 end
