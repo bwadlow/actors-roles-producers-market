@@ -6,11 +6,19 @@ class Booking < ApplicationRecord
   scope :by_sex, lambda { |sex| where(:sex => sex)}
   scope :by_age, lambda { |age| where(:age => age)}
 
-  def self.sex_search(sex_search)
+  def age_query_upper
+    age_query += 5
+  end
+
+  def age_query_lower
+    age_query -= 5
+  end
+
+  def self.sex_search(sex_query)
     if sex_search
-      booking = Booking.find_by(sex: sex_search.downcase)
+      booking = Booking.find_by(sex: sex_query.downcase)
       if booking
-        self.where(sex: sex_search.downcase)
+        self.where(sex: sex_query.downcase)
       else
         Booking.all
       end
@@ -19,11 +27,11 @@ class Booking < ApplicationRecord
     end
   end
 
-  def self.age_search(age_search)
-    if age_search
-      booking = Booking.find_by(age: age_search)
+  def self.age_search(age_query)
+    if age_query
+      booking = Booking.find_by(age: age_query)
       if booking
-        self.where(age: age_search)
+        self.where(age: age_query)
       else
         Booking.all
       end

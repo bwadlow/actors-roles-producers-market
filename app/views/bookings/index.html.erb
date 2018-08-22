@@ -2,11 +2,11 @@
 
 Search by sex<br>
 <%= form_tag(bookings_path, method: :get) do %>
-  <%= text_field_tag(:sex_search, params[:sex_search]) %><br>
+  <%= text_field_tag(:sex_query, params[:sex_query]) %><br>
 <!-- <% end %></h4> -->
 Search by age<br>
 <%= form_tag(bookings_path, method: :get) do %>
-  <%= number_field_tag(:age_search, params[:age_search]) %><br>
+  <%= number_field_tag(:age_query, params[:age_query]) %><br>
   <%= submit_tag "Submit search" %>
 <% end %><br></h4><br>
 
