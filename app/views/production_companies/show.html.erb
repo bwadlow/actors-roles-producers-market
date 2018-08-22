@@ -35,7 +35,7 @@
       <td><%=booking.salary %></td>
       <td><%=booking.sex %></td>
       <td><%=booking.duration_days %></td>
-      <td><%=booking.available? %></td>
+      <td><%=booking.available %></td>
       <td><%= link_to "Edit this Booking", edit_booking_path(booking) %></td>
       <td><%= link_to "Delete this Booking", booking_path(booking),  method: :delete %></td>
       <!-- <%= link_to "Click to Create", new_booking_path(show_name: "#{booking.show_name}", prod_id: "#{booking.production_company_id}") %> -->

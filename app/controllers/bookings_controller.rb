@@ -20,6 +20,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    # byebug
     @sex_array = ['other', 'male', 'female']
     @booking = Booking.create!(booking_params)
     if @booking.save
@@ -39,7 +40,6 @@ class BookingsController < ApplicationController
   end
 
   def update
-    # byebug
     @booking = Booking.update(booking_params)
     if @booking
       redirect_to booking_path(@booking)
@@ -61,7 +61,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available?, :actor_id, :production_company_id, :booking_id, :sex, :search, :commit)
+    params.require(:booking).permit(:salary, :duration_days, :show_name, :role_name, :available, :actor_id, :production_company_id, :booking_id, :sex, :search, :commit)
   end
 
 end#end of class

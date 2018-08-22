@@ -5,5 +5,5 @@
 <label><b>Age: </b></label> <%= @booking.age %><br>
 <label><b>Sex: </b></label> <%= @booking.sex %><br>
 <label><b>Duration in Days: </b></label> <%= @booking.duration_days %><br>
-<label><b>Currently Available?: </b></label> <%= @booking.available? %><br>
+<label><b>Currently Available?: </b></label> <%= @booking.available %><br>
 <label><b>Production Company: </b></label> <%= link_to @booking.production_company.name, production_company_path(@booking.production_company) %><br><br>
