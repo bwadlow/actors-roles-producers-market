@@ -7,7 +7,7 @@
   Our auditioner: <%= audition.production_company.name %><br>
   Location: <%= audition.address %><br>
   Date: <%= audition.date %><br>
-  Time: <%= audition.time %><br>
+  Time: <%= audition.time.strftime("%I:%M:%S %p") %><br>
   Show: <%= audition.booking.show_name %><br>
   Role: <%= audition.booking.role_name %><br><br>
   <% end %>
