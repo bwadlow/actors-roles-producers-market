@@ -1,7 +1,11 @@
 class BookingsController < ApplicationController
   def index
     # byebug
-    @bookings = Booking.sex_search(params[:sex_search]) || Booking.age_search(params[:age_search])
+    # @bookings = Booking.sex_search(params[:sex_search])
+    @bookings = Booking.all
+
+    @bookings = @bookings.by_sex(params[:sex_search]) if params[:sex_search].present?
+    @bookings = @bookings.by_age(params[:age_search]) if params[:age_search].present?
   end
 
   def show

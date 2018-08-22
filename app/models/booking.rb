@@ -3,6 +3,9 @@ class Booking < ApplicationRecord
   belongs_to :actor, optional: true
   belongs_to :production_company
 
+  scope :by_sex, lambda { |sex| where(:sex => sex)}
+  scope :by_age, lambda { |age| where(:age => age)}
+
   def self.sex_search(sex_search)
     if sex_search
       booking = Booking.find_by(sex: sex_search.downcase)
