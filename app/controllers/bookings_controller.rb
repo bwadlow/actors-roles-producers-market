@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  
+
   def index
     @bookings = Booking.all
     @bookings = @bookings.by_sex(params[:sex_query]) if params[:sex_query].present?
