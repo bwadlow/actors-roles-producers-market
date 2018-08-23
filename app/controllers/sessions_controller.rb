@@ -5,6 +5,7 @@ def new
 end
 
 def create
+  # byebug
   @actor = Actor.find_by ({username: params[:username]})
   @production_company = ProductionCompany.find_by ({username: params[:username]})
   if !!@actor && @actor.authenticate(params[:password])
@@ -25,6 +26,6 @@ end
   def destroy
     session.delete(:actor_id)
     session.delete(:production_company_id)
-    redirect_to login_path
+    redirect_to home_path
   end
 end
