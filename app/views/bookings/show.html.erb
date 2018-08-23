@@ -7,3 +7,5 @@
 <label><b>Duration in Days: </b></label> <%= @booking.duration_days %><br>
 <label><b>Currently Available?: </b></label> <%= @booking.available %><br>
 <label><b>Production Company: </b></label> <%= link_to @booking.production_company.name, production_company_path(@booking.production_company) %><br><br>
+
+<%= link_to "Create an Audition for this Booking", new_audition_path(booking_id: "#{@booking.id}")%>

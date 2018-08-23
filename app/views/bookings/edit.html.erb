@@ -14,7 +14,7 @@
   <% if @auditions.length==0 %>
   <%= "There are no auditions" %>
   <% else %>
-  <%= f.collection_select(:actor_id, @auditions, :id, :name) %>
+  <%= f.select(:actor_id, @auditions_actor) %>
   <% end %>
   <b><%= f.label :salary %></b>
   <%= f.text_field :salary %>

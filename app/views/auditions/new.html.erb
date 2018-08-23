@@ -1,0 +1,22 @@
+<h1>Create a New Audition for <%= Booking.find(@booking_id).show_name %></h1>
+<b><%= Booking.find(@booking_id).production_company.name %></b><br>
+<b><%= Booking.find(@booking_id).production_company.address %><br><br>
+<b><%= Booking.find(@booking_id).role_name %><br><br>
+<b><%= Booking.find(@booking_id).sex %><br><br>
+<b><%= Booking.find(@booking_id).age %><br><br>
+<b><%= Booking.find(@booking_id).duration_days %><br><br>
+<b><%= Booking.find(@booking_id).salary %><br><br>
+
+
+
+<%= form_for @audition do |f| %>
+  <%= f.hidden_field :production_company_id, :value => Booking.find(@booking_id).production_company_id %>
+  <%= f.hidden_field :address, :value => Booking.find(@booking_id).production_company.address%>
+  <%= f.hidden_field :booking_id, :value => @booking_id %>
+  <%= f.hidden_field :actor_id, :value => user.field_name_uninherited %>
+  <%= f.label :Date %>
+  <%= f.date_select(:date,:start_year => 2018) %><br><br>
+  <%= f.label :Time %>
+  <%= f.time_select(:time,:start_year => 2018) %><br><br>
+
+<% end %>

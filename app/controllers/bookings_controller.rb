@@ -20,7 +20,6 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # byebug
     @sex_array = ['other', 'male', 'female']
     @booking = Booking.create!(booking_params)
     if @booking.save
@@ -34,7 +33,10 @@ class BookingsController < ApplicationController
     @sex_array = ['male', 'female', 'other']
     @booking = Booking.find(params[:id])
     @auditions = Audition.all.select do |audition|
-        audition.actor_id == @booking.actor_id
+        audition.booking_id == @booking.id
+      end
+      @audition_actor = @auditions.map do |audition|
+        audition.actor.name
       end
     render :edit
   end

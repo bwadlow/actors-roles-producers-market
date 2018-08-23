@@ -21,6 +21,16 @@ class AuditionsController < ApplicationController
     end
   end
 
+  def new
+    @audition = Audition.new
+    @booking_id = params[:booking_id]
+  end
+
+  def create
+    @audition = Audition.create(audition_params)
+    redirect_to audition_path(@audtion)
+  end
+
   def destroy
     @audition = Audition.destroy(params[:id])
     redirect_to auditions_path

@@ -15,7 +15,7 @@ bookings_sex_array = ['male', 'female', 'other', 'any']
 end
 
 20.times do
-  ProductionCompany.create(name: Faker::Company.name)
+  ProductionCompany.create(name: Faker::Company.name, address: Faker::Address.street_address)
 end
 
 50.times do
