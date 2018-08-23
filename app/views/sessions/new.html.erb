@@ -1,0 +1,12 @@
+<h2>Login</h2>
+
+<%= form_tag login_path, method: :post do %>
+  <%= label_tag "Username" %>
+  <%= text_field_tag :username %><br><br>
+  <%= label_tag "Password" %>
+  <%= password_field_tag :password %><br><br>
+  <%= submit_tag "Login" %>
+<% end %>
+<br><br>
+<%= link_to "Create an Actor Account", new_actor_path %><br><br>
+<%= link_to "Create a Production Company Account", new_production_company_path %>

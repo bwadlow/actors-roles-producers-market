@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2018_08_23_164531) do
     t.string "address"
     t.string "username"
     t.string "password_digest"
+    t.string "address"
   end
 
 end

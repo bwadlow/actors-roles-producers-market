@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
+  # skip_before_action :actor_authorized, :production_company_authorized, except: :destroy
   helper_method :current_actor
   helper_method :current_production_company
   helper_method :actor_logged_in
   helper_method :production_company_logged_in
-  before_action :actor_authorized
-  before_action :production_company_authorized
+  before_action :actor_authorized, only: :destroy
+  before_action :production_company_authorized, only: :destroy
 
   def current_actor
     @actor = Actor.find_by({ id: session[:actor_id] })
