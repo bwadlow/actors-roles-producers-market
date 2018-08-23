@@ -1,4 +1,5 @@
 <h2>Login</h2>
+<h2><%= flash[:notice] %></h2>
 
 <%= form_tag login_path, method: :post do %>
   <%= label_tag "Username" %>
