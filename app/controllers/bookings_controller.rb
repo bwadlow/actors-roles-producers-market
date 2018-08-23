@@ -35,8 +35,8 @@ class BookingsController < ApplicationController
     @auditions = Audition.all.select do |audition|
         audition.booking_id == @booking.id
       end
-      @audition_actor = @auditions.map do |audition|
-        audition.actor.name
+      @audition_actors = @auditions.map do |audition|
+        audition.actor
       end
     render :edit
   end

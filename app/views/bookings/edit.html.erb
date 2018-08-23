@@ -11,10 +11,10 @@
   <%= f.select(:sex, @sex_array) %>
 
   <b><%= f.label :Actor %></b>
-  <% if @auditions.length==0 %>
+  <% if @audition_actors.length==0 %>
   <%= "There are no auditions" %>
   <% else %>
-  <%= f.select(:actor_id, @auditions_actor) %>
+  <%= f.collection_select(:actor_id, @audition_actors, :id, :name) %>
   <% end %>
   <b><%= f.label :salary %></b>
   <%= f.text_field :salary %>

@@ -32,6 +32,7 @@ class AuditionsController < ApplicationController
   end
 
   def destroy
+    byebug
     @audition = Audition.destroy(params[:id])
     redirect_to auditions_path
   end

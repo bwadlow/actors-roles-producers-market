@@ -1,4 +1,4 @@
-<h2><%= link_to @audition.actor.name, actor_path(@audition.actor) %>'s Audition</h2>
+<h2> Auditions for <%= link_to @audition.actor.name, actor_path(@audition.actor) %></h2>
 
 Production Company: <%= link_to @audition.production_company.name, production_company_path(@audition.production_company) %><br><br>
 Show: <%= @audition.booking.show_name %><br><br>
@@ -9,4 +9,4 @@ Location: <%= @audition.address %><br><br>
 
 <%= link_to "Need to change the date and/or time?", edit_audition_path(@audition) %><br><br>
 
-<%= button_to "Cancel this audition", @audition, method: :delete %>
+<%= button_to "Cancel this audition", audition_path(@audition), method: "DELETE" %>
