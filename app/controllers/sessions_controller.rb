@@ -18,7 +18,7 @@ def create
     session[:production_company_id] = @production_company.id
     redirect_to @production_company
   else
-    flash[:notice] = "Invalid login information"
+    flash[:notice] = "Invalid username or password"
     redirect_to login_path
   end
 end

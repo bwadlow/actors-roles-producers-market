@@ -5,7 +5,7 @@ class ProductionCompaniesController < ApplicationController
   end
 
   def show
-    @production_company = ProductionCompany.find(params[:id])
+    @production_company = ProductionCompany.find(session[:production_company_id])
   end
 
   def new

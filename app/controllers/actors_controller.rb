@@ -5,7 +5,7 @@ class ActorsController < ApplicationController
   end
 
   def show
-    @actor = Actor.find(params[:id])
+    @actor = Actor.find(session[:actor_id])
   end
 
   def new
