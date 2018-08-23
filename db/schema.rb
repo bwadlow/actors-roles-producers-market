@@ -56,15 +56,10 @@ ActiveRecord::Schema.define(version: 2018_08_23_164531) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "address"
     t.string "username"
     t.string "password_digest"
     t.string "address"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "role"
   end
 
 end

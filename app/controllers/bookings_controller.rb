@@ -8,7 +8,6 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @actor_id = params(:actor_id)
   end
 
   def new
