@@ -4,8 +4,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_production_company
   helper_method :actor_logged_in
   helper_method :production_company_logged_in
-  before_action :actor_authorized, only: :destroy
-  before_action :production_company_authorized, only: :destroy
+  before_action :authorized, only: :destroy
 
   def current_actor
     @actor = Actor.find_by({ id: session[:actor_id] })
@@ -23,12 +22,8 @@ class ApplicationController < ActionController::Base
     !!current_production_company()
   end
 
-  def actor_authorized
-    redirect_to login_path unless actor_logged_in
-  end
-
-  def production_company_authorized
-    redirect_to login_path unless production_company_logged_in
+  def authorized
+    redirect_to login_path unless actor_logged_in || production_company_logged_in
   end
 
 end
