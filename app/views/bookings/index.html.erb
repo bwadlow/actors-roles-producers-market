@@ -14,7 +14,7 @@ Search by age<br>
   <ul>
     <% @bookings.each do |booking| %>
       <li>
-        <%= link_to booking.show_name, booking_path(booking) %>
+        <%= link_to booking.show_name, booking_path(booking, actor_id: "#{@actor.id}") %>
       </li>
     <% end %>
   </ul>

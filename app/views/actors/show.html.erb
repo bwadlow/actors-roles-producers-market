@@ -1,8 +1,9 @@
 <h2><%= @actor.name %></h2>
 
-Actor stats:<br><br>
-Age: <%= @actor.age %><br>
-Sex: <%= @actor.sex %><br><br>
+<h3><b>Actor stats:</b></h3>
+<b>Age: </b><%= @actor.age %><br>
+<b>Sex: </b><%= @actor.sex %><br><br>
+<%= button_to "Delete this actor", actor_path(@actor), method: :delete %>
 
 <h3>My Auditions:</h3>
 
@@ -14,9 +15,7 @@ Sex: <%= @actor.sex %><br><br>
   <li><%= link_to "#{audition.booking.show_name} - #{audition.booking.role_name}", audition_path(audition) %></li>
   <% end %>
   <% end %>
-</ul><br><br>
-<%= link_to "See all Booking Opportunies", bookings_path %>
-
-<%= button_to "Delete this actor", actor_path(@actor), method: :delete %><br><br>
+</ul><br>
+<%= link_to "See all Booking Opportunities", bookings_path(actor_id: "#{@actor.id}") %><br><br>
 
 <%= link_to "Back to all actors", actors_path %>

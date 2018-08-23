@@ -28,7 +28,7 @@ class AuditionsController < ApplicationController
 
   def create
     @audition = Audition.create(audition_params)
-    redirect_to audition_path(@audtion)
+    redirect_to audition_path(@audition)
   end
 
   def destroy
