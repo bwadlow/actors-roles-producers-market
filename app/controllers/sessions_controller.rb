@@ -24,8 +24,11 @@ def create
 end
 
   def destroy
-    session.delete(:actor_id)
-    session.delete(:production_company_id)
+    if session[:actor_id]
+      session.delete(:actor_id)
+    else
+      session.delete(:production_company_id)
+    end
     redirect_to home_path
   end
 end
