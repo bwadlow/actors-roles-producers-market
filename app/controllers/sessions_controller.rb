@@ -23,7 +23,8 @@ def create
 end
 
   def destroy
-    session.delete(:user_id)
+    session.delete(:actor_id)
+    session.delete(:production_company_id)
     redirect_to login_path
   end
 end
