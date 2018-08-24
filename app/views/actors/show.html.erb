@@ -17,7 +17,9 @@
   <% end %>
 </ul><br>
 <%= link_to "See all Booking Opportunities", bookings_path %><br>
-
+<% if production_company_logged_in %>
 <%= link_to "Back to all actors", actors_path %>
-
+<% end %>
+<% if actor_logged_in %>
 <%= button_to "Delete this actor", actor_path(@actor), method: :delete %>
+<% end %>
