@@ -5,7 +5,7 @@ def new
 end
 
 def create
-  byebug
+  # byebug
   @actor = Actor.find_by ({username: params[:username]})
   @production_company = ProductionCompany.find_by ({username: params[:username]})
   if !!@actor && @actor.authenticate(params[:password])
