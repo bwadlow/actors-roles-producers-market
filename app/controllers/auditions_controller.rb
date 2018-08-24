@@ -34,9 +34,10 @@ class AuditionsController < ApplicationController
   end
 
   def destroy
-
-    @audition = Audition.destroy(params[:id])
-    redirect_to actor_path
+    @audition = Audition.find(params[:id])
+    @actor = @audition.actor
+    @audition.destroy
+    redirect_to actor_path(@actor)
   end
 
   private
