@@ -5,8 +5,8 @@ def new
 end
 
 def create
-  @actor = Actor.find_by ({username: params[:username]})
-  @production_company = ProductionCompany.find_by ({username: params[:username]})
+  @actor = Actor.find_by({username: params[:username]})
+  @production_company = ProductionCompany.find_by({username: params[:username]})
   if !!@actor && @actor.authenticate(params[:password])
     flash[:notice] = "Success"
     session[:actor_id] = @actor.id #creates hash in session
