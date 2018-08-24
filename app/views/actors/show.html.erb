@@ -1,9 +1,9 @@
+<h2><%= flash[:notice] %></h2>
 <h2><%= @actor.name %></h2>
 
 <h3><b>Actor stats:</b></h3>
 <b>Age: </b><%= @actor.age %><br>
 <b>Sex: </b><%= @actor.sex %><br><br>
-<%= button_to "Delete this actor", actor_path(@actor), method: :delete %>
 
 <h3>My Auditions:</h3>
 
@@ -19,3 +19,5 @@
 <%= link_to "See all Booking Opportunities", bookings_path %><br><br>
 
 <%= link_to "Back to all actors", actors_path %>
+
+<%= button_to "Delete this actor", actor_path(@actor), method: :delete %>

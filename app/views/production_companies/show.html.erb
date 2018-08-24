@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 <h1>Bookings for <%= @production_company.name %></h1>
 
+=======
+<h1><%= flash[:notice] %></h1>
+<h1><%= @production_company.name %>'s Bookings</h1>
+<h3><%= @production_company.address %></h3>
+>>>>>>> db2e40fa811272d361ca3543bf8412a8b2f156f5
 <%= button_to "Delete this company", @production_company, method: :delete %><br><br>
 
 <%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}", prod_id: "#{@production_company.id}") %><br><br>

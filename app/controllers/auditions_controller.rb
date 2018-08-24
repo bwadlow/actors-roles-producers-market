@@ -27,6 +27,7 @@ class AuditionsController < ApplicationController
   end
 
   def create
+    # byebug
     @audition = Audition.create(audition_params)
     redirect_to audition_path(@audition)
   end

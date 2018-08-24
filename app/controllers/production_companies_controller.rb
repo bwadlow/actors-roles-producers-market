@@ -15,6 +15,7 @@ class ProductionCompaniesController < ApplicationController
   def create
     @production_company = ProductionCompany.create(prod_params)
       if @production_company
+        session[:production_company_id] = @production_company.id
         redirect_to @production_company
       else
         render :new
