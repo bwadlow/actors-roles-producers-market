@@ -1,7 +1,8 @@
 <h1>Bookings for <%= @production_company.name %></h1>
 
-
+<% if production_company_logged_in %>
 <%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}", prod_id: "#{@production_company.id}") %><br><br>
+<% end %>
 
   <html>
   <head>
@@ -37,14 +38,17 @@
       <td><center><%=booking.sex %></center></td>
       <td><center><%=booking.duration_days %></center></td>
       <td><center><%=booking.available %></center></td>
+      <% if production_company_logged_in %>
       <td><center><%= link_to "Edit this Booking", edit_booking_path(booking) %></center></td>
       <td><center><%= link_to "Delete this Booking", booking_path(booking),  method: :delete %></center></td>
+      <% end %>
     </tr>
     <% end %>
   </table><br><br>
   <%= link_to "Back to all companies", production_companies_path %><br>
+  <% if production_company_logged_in %>
   <%= button_to "Delete this company", @production_company, method: :delete %>
-
+  <% end %>
 
   </body>
   </html>

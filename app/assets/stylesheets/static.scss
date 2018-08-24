@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .homepage-login {
+  text-align: center;
+  font-size: 100px;
   background-image: url("masks2");
   background-size: contain, cover;
-  height: 550px;
-  background-repeat:   no-repeat;
+  height: 900px;
+  background-repeat: no-repeat;
   background-position: center center;
 }
 // .body-tag {
