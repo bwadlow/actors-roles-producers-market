@@ -9,6 +9,6 @@ Location: <%= @audition.address %><br><br>
 
 <%= link_to "Need to change the date and/or time?", edit_audition_path(@audition) %><br><br>
 
-<%= form_tag @audition,method: "DELETE" do %>
+<%= form_tag @audition, method: "DELETE" do %>
 <%= submit_tag "CANCEL THIS AUDITION" %>
 <% end %>

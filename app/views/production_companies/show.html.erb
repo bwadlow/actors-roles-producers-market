@@ -1,6 +1,5 @@
-<h1><%= flash[:notice] %></h1>
-<h1><%= @production_company.name %>'s Bookings</h1>
-<h3><%= @production_company.address %></h3>
+<h1>Bookings for <%= @production_company.name %></h1>
+
 
 <%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}", prod_id: "#{@production_company.id}") %><br><br>
 
@@ -10,12 +9,15 @@
   table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
-      table-layout: fixed;
+
   }
   </style>
   </head>
   <body>
   <table style="width:100%">
+    <tr>
+      <th colspan=8>OPEN BOOKINGS</th>
+    </tr>
     <tr>
       <th>Show</th>
       <th>Role</th>
@@ -29,16 +31,14 @@
 
       <% @production_company.bookings.each do |booking| %>
       <tr>
-      <td><%=booking.show_name %></td>
-      <td><%=booking.role_name %></td>
-      <td><%=booking.salary %></td>
-      <td><%=booking.sex %></td>
-      <td><%=booking.duration_days %></td>
-      <td><%=booking.available %></td>
-      <td><%= link_to "Edit this Booking", edit_booking_path(booking) %></td>
-      <td><%= link_to "Delete this Booking", booking_path(booking),  method: :delete %></td>
-      <!-- <%= link_to "Click to Create", new_booking_path(show_name: "#{booking.show_name}", prod_id: "#{booking.production_company_id}") %> -->
-
+      <td><center><%=booking.show_name %></center></td>
+      <td><center><%=booking.role_name %></center></td>
+      <td><center><%=booking.salary %></center></td>
+      <td><center><%=booking.sex %></center></td>
+      <td><center><%=booking.duration_days %></center></td>
+      <td><center><%=booking.available %></center></td>
+      <td><center><%= link_to "Edit this Booking", edit_booking_path(booking) %></center></td>
+      <td><center><%= link_to "Delete this Booking", booking_path(booking),  method: :delete %></center></td>
     </tr>
     <% end %>
   </table><br><br>
