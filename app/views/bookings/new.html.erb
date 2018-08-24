@@ -9,15 +9,18 @@
   <%= f.text_field :show_name %>
   <% else %>
   <%= f.hidden_field :show_name, :value => @show_name %>
-  <% end %>
+  <% end %><br><br>
   <%= f.label :role_name %>
-  <%= f.text_field :role_name %>
+  <%= f.text_field :role_name %><br><br>
 
   <%= f.label :salary %>
-  <%= f.text_field :salary %>
+  <%= f.number_field :salary %><br><br>
 
   <%= f.label :Duration_in_days %>
-  <%= f.text_field :duration_days %>
+  <%= f.number_field :duration_days %><br><br>
+
+  <%= f.label :age %>
+  <%= f.number_field :age %><br><br>
 
   <%= f.label :sex %>
   <%= f.select(:sex, @sex_array) %>

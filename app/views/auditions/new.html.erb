@@ -9,9 +9,9 @@
 
 <%= form_for @audition do |f| %>
   <%= f.hidden_field :production_company_id, :value => Booking.find(@booking_id).production_company_id %>
-  <%= f.hidden_field :address, :value => Booking.find(@booking_id).production_company.address%>
+  <%= f.hidden_field :address, :value => Booking.find(@booking_id).production_company.address %>
   <%= f.hidden_field :booking_id, :value => @booking_id %>
-  <%= f.hidden_field :actor_id, :value => session[:actor_id]%>
+  <%= f.hidden_field :actor_id, :value => session[:actor_id] %>
   <b>Your Audition Time:</b><br>
   <%= f.time_select(:time,:start_year => 2018) %><br><br>
   <b>Your Audition Date: </b><br>

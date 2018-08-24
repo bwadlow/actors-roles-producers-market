@@ -11,11 +11,11 @@ sex_array = ['male', 'female', 'other']
 bookings_sex_array = ['male', 'female', 'other', 'any']
 
 20.times do
-  Actor.create(name: Faker::Name.name, age: rand(18..99), sex: sex_array.sample(1).first)
+  Actor.create!(username: Faker::Name.first_name, password_digest: 'actor', name: Faker::Name.name, age: rand(18..99), sex: sex_array.sample(1).first)
 end
 
 20.times do
-  ProductionCompany.create(name: Faker::Company.name, address: Faker::Address.street_address)
+  ProductionCompany.create!(username: Faker::Name.first_name, password_digest: 'prodco', name: Faker::Company.name, address: Faker::Address.street_address)
 end
 
 50.times do

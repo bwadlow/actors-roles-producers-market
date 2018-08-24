@@ -1,7 +1,6 @@
 <h1><%= flash[:notice] %></h1>
 <h1><%= @production_company.name %>'s Bookings</h1>
 <h3><%= @production_company.address %></h3>
-<%= button_to "Delete this company", @production_company, method: :delete %><br><br>
 
 <%= link_to "Create a New Booking", new_booking_path(name: "#{@production_company.name}", prod_id: "#{@production_company.id}") %><br><br>
 
@@ -43,7 +42,8 @@
     </tr>
     <% end %>
   </table><br><br>
-  <%= link_to "Back to all companies", production_companies_path %>
+  <%= link_to "Back to all companies", production_companies_path %><br>
+  <%= button_to "Delete this company", @production_company, method: :delete %>
 
 
   </body>

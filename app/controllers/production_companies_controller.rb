@@ -35,7 +35,7 @@ class ProductionCompaniesController < ApplicationController
   private
 
   def prod_params
-    params.require(:production_company).permit(:name, :username, :password)
+    params.require(:production_company).permit(:name, :address, :username, :password)
   end
 
 

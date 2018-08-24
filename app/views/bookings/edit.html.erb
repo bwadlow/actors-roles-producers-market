@@ -5,25 +5,26 @@
   <%= f.hidden_field :show_name%>
 
   <b><%= f.label :Role %></b>
-  <%= f.text_field :role_name %>
+  <%= f.text_field :role_name %><br><br>
 
   <b><%= f.label :Sex %></b>
-  <%= f.select(:sex, @sex_array) %>
+  <%= f.select(:sex, @sex_array) %><br><br>
 
   <b><%= f.label :Actor %></b>
   <% if @audition_actors.length==0 %>
   <%= "There are no auditions" %>
   <% else %>
   <%= f.collection_select(:actor_id, @audition_actors, :id, :name) %>
-  <% end %>
+  <% end %><br><br>
+
   <b><%= f.label :salary %></b>
-  <%= f.text_field :salary %>
+  <%= f.text_field :salary %><br><br>
 
   <b><%= f.label :Duration_in_days %></b>
-  <%= f.text_field :duration_days %>
+  <%= f.text_field :duration_days %><br><br>
 
   <b><%= f.label :Available %></b>
-  <%= f.check_box :available %>
+  <%= f.check_box :available %><br><br>
 
   <%= f.submit %>
 
