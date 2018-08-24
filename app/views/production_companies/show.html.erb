@@ -16,17 +16,16 @@
   <body>
   <table style="width:100%">
     <tr>
-      <th colspan=8>OPEN BOOKINGS</th>
+      <th colspan=8><center>OPEN BOOKINGS</center></th>
     </tr>
     <tr>
-      <th>Show</th>
-      <th>Role</th>
-      <th>Salary</th>
-      <th>Sex</th>
-      <th>Duration (Days)</th>
-      <th>Available</th>
-      <th>Edit Booking</th>
-      <th>Delete Booking</th>
+      <th><center>Show</center></th>
+      <th><center>Role</center></th>
+      <th><center>Salary</center></th>
+      <th><center>Sex</center></th>
+      <th><center>Duration (Days)</center></th>
+      <th><center>Edit Booking</center></th>
+      <th><center>Delete Booking</center></th>
     </tr>
 
       <% @production_company.bookings.each do |booking| %>
@@ -36,7 +35,6 @@
       <td><center><%=booking.salary %></center></td>
       <td><center><%=booking.sex %></center></td>
       <td><center><%=booking.duration_days %></center></td>
-      <td><center><%=booking.available %></center></td>
       <td><center><%= link_to "Edit this Booking", edit_booking_path(booking) %></center></td>
       <td><center><%= link_to "Delete this Booking", booking_path(booking),  method: :delete %></center></td>
     </tr>
