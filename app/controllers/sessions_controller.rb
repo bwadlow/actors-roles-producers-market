@@ -9,12 +9,12 @@ def create
   @actor = Actor.find_by ({username: params[:username]})
   @production_company = ProductionCompany.find_by ({username: params[:username]})
   if !!@actor && @actor.authenticate(params[:password])
-    flash[:notice] = "Welcome!"
+    flash[:notice] = "Welcome back!"
     session[:actor_id] = @actor.id
     redirect_to @actor
   elsif
     !!@production_company && @production_company.authenticate(params[:password])
-    flash[:notice] = "Welcome!"
+    flash[:notice] = "Welcome back!"
     session[:production_company_id] = @production_company.id
     redirect_to @production_company
   else
