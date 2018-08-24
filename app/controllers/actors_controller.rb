@@ -6,7 +6,7 @@ class ActorsController < ApplicationController
 
   def show
     # byebug
-    @actor = Actor.find(session[:actor_id])
+    @actor = Actor.find(params[:id])
   end
 
   def new

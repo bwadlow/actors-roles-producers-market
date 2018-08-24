@@ -5,12 +5,12 @@ def new
 end
 
 def create
-  # byebug
+  byebug
   @actor = Actor.find_by ({username: params[:username]})
   @production_company = ProductionCompany.find_by ({username: params[:username]})
   if !!@actor && @actor.authenticate(params[:password])
     flash[:notice] = "Welcome!"
-    session[:actor_id] = @actor.id #creates hash in session
+    session[:actor_id] = @actor.id
     redirect_to @actor
   elsif
     !!@production_company && @production_company.authenticate(params[:password])
