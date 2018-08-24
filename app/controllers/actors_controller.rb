@@ -16,7 +16,7 @@ class ActorsController < ApplicationController
 
   def create
     @actor = Actor.create(actor_params)
-    if @actor
+    if @actor.valid?
       session[:actor_id] = @actor.id
       redirect_to actor_path(@actor)
     else
