@@ -10,11 +10,12 @@ class AuditionsController < ApplicationController
 
   def edit
     @audition = Audition.find(params[:id])
+    # byebug
   end
 
   def update
-    @audition = Audition.update(audition_params)
-    if @audition
+    @audition = Audition.find(params[:id])
+    if @audition.update(audition_params)
       redirect_to audition_path(@audition)
     else
       render :edit
@@ -27,8 +28,8 @@ class AuditionsController < ApplicationController
   end
 
   def create
-    # byebug
     @audition = Audition.create(audition_params)
+    # byebug
     redirect_to audition_path(@audition)
   end
 
