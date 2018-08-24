@@ -1,6 +1,13 @@
 // Place all the styles related to the static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.homepage-login {
+  background-image: url("masks2");
+  background-size: contain, cover;
+  height: 550px;
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
 // .body-tag {
-//   background-image: url("masks2");
+//   background-color: lightgray
 // }

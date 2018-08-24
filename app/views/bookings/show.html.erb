@@ -8,4 +8,6 @@
 <label><b>Currently Available?: </b></label> <%= @booking.available %><br>
 <label><b>Production Company: </b></label> <%= link_to @booking.production_company.name, production_company_path(@booking.production_company) %><br><br>
 
+<% if actor_logged_in %>
 <%= link_to "Create an Audition for this Booking", new_audition_path(booking_id: "#{@booking.id}")%>
+<% end %>
