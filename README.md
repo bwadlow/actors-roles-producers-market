@@ -2,7 +2,7 @@
 # Book Your Heart Out
 This is an application for actors and production companies to book roles on both the actor and producers sides.
 ## Motivation
-As the husband of an actor and an actor/coder team, we saw a need for simplifying the audition booking process.
+As my project teammate and I are both connected to the world of acting, we saw a need for simplifying the audition booking process.
 ## Technologies Used
 Ruby, Ruby on Rails, OAuth, Bootstrap
 ## Features
@@ -14,8 +14,5 @@ Ruby, Ruby on Rails, OAuth, Bootstrap
 2. Run `bundle install`.
 3. When dependencies are installed, run `rails s`.
 4. Visit <http://localhost:3000/home>.
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-Please make sure to update tests as appropriate.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
